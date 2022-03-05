@@ -1,0 +1,17 @@
+.temp-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../images/Icon.svg");
+}
+
+.active {
+    .temp-icon {
+        background-image: url("../images/Icon-Active.svg");
+    }
+
+    &.temp-icon {
+        background-image: url("../images/Icon-Active.svg");
+    }
+}

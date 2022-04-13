@@ -5,7 +5,7 @@ namespace Undefined\Krayin\Twilio\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
-class SMSServiceProvider extends ServiceProvider
+class TwilioServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -21,13 +21,13 @@ class SMSServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'twilio');
 
         $this->publishes([
-            __DIR__ . '/../../publishable/assets' => public_path('sms/assets'),
+            __DIR__ . '/../../publishable/assets' => public_path('twilio/assets'),
         ], 'public');
 
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'sms');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'twilio');
 
         Event::listen('admin.layout.head', function ($viewRenderEventManager) {
-            $viewRenderEventManager->addTemplate('sms::layouts.style');
+            $viewRenderEventManager->addTemplate('twilio::layouts.style');
         });
 
         // Breadcrumbs
@@ -64,8 +64,13 @@ class SMSServiceProvider extends ServiceProvider
         );
 
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/system.php', 
+            dirname(__DIR__) . '/Config/system.php',
             'core_config'
+        );
+
+        $this->mergeConfigFrom(
+            dirname(__DIR__) . '/Config/dashboard_cards.php',
+            'dashboard_cards'
         );
     }
 }

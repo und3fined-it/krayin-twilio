@@ -1,14 +1,22 @@
 <?php
   
 return [
+    "app" => [
+        "name" => "Twilio"
+    ],
+    "config" => [
+        "general_settings" => "General settings",
+        "api_account_sid" => "Account SID",
+        "api_auth_token" => "Auth token"
+    ],  
     "sms" => [
-        'sms' => "SMS",
+        'name' => "SMS",
         'outbox' => "Outbox",
         'compose' => "Compose",
         'listing' => "SMS",
         'sms-sent' => "SMS sent",
         'compose-a-sms' => "Compose a SMS",
-        'who-will-get-the-sms' => 'Who will get the SMS?',
+        'send-to' => 'Send to',
         'insert-to' => "Insert the recipient (ex. +39 ...)",
         'body' => 'Message body',
         'insert-body' => "Insert the message body",
@@ -19,6 +27,16 @@ return [
         'sid' => "SID",
         'sent-to' => 'Sent to',
         'status' => "Status",
-        'created_at' => "Created at"
+        'accepted' => "Accepted",
+        'scheduled' => "Scheduled",
+        'queued' => "Queued",
+        'sending' => "Sending",
+        'sent' => "Sent",
+        'delivery_unknown' => "Delivery unknown",
+        'delivered' => "Delivered",
+        'undelivered' => "Undelivered",
+        'failed' => "Failed",
+        'created_at' => "Created at",
+        'total' => "Total"
     ],
 ];

@@ -4,7 +4,7 @@ namespace Undefined\Krayin\Twilio\Repositories;
 
 use Webkul\Core\Eloquent\Repository;
 
-class SmsRepository extends Repository {
+class SMSRepository extends Repository {
     /**
      * Specify Model class name.
      * @return mixed

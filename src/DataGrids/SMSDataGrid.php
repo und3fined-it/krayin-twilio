@@ -49,15 +49,16 @@ class SMSDataGrid extends DataGrid
         $this->addColumn([
             'index'    => 'status',
             'label'    => trans('twilio::package.sms.status'),
-            'type'     => 'string'
+            'type'     => 'string',
+            'closure'    => function ($row) {
+                return trans('twilio::package.sms.' . $row->status);
+            },
         ]);
 
         $this->addColumn([
             'index'      => 'created_at',
             'label'      => trans('twilio::package.sms.created_at'),
             'type'       => 'date_range',
-            'searchable' => false,
-            'sortable'   => true,
             'closure'    => function ($row) {
                 return core()->formatDate($row->created_at);
             },

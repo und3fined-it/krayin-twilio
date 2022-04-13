@@ -2,24 +2,24 @@
 
 return [
     [
-        'key' => 'sms',
-        'name' => "SMS",
-        'route' => 'admin.sms.index',
+        'key' => 'twilio',
+        'name' => "twilio::package.app.name",
+        'route' => 'admin.twilio.sms.index',
         'sort' => 1,
-        'icon-class' => 'temp-icon',
+        'icon-class' => 'twilio-icon'
     ],
     [
-        'key' => 'sms.create',
-        'name' => "Compose",
-        'route' => 'admin.sms.create',
-        'sort' => 2,
-        'icon-class' => 'temp-icon',
+        'key' => 'twilio.sms',
+        'name' => "twilio::package.sms.name",
+        'route' => 'admin.twilio.sms.index',
+        'sort' => 1,
+        'icon-class' => 'twilio-icon',
     ],
     [
-        'key' => 'sms.index',
-        'name' => "Outbox",
-        'route' => 'admin.sms.index',
-        'sort' => 2,
-        'icon-class' => 'temp-icon',
+        'key' => 'twilio.sms.compose',
+        'name' => "twilio::package.sms.name",
+        'route' => 'admin.twilio.sms.create',
+        'sort' => 1,
+        'icon-class' => 'twilio-icon',
     ]
 ];

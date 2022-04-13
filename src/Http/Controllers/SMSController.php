@@ -46,21 +46,15 @@ class SMSController extends Controller
      */
     public function index()
     {
-        if (! bouncer()->hasPermission('sms.' . request('route'))) {
+        if (! bouncer()->hasPermission('twilio.sms.index')) {
             abort(401, 'This action is unauthorized');
         }
 
-        switch (request('route')) {
-            case 'compose':
-                return view('sms::compose');
-
-            default:
-                if (request()->ajax()) {
-                    return app(SmsDataGrid::class)->toJson();
-                }
-
-                return view('sms::index');
+        if (request()->ajax()) {
+            return app(SmsDataGrid::class)->toJson();
         }
+
+        return view('twilio::sms.index');
     }
 
     /**
@@ -70,7 +64,11 @@ class SMSController extends Controller
      */
     public function create()
     {
-        return view('sms::create');
+        if (! bouncer()->hasPermission('twilio.sms.create')) {
+            abort(401, 'This action is unauthorized');
+        }
+
+        return view('twilio::sms.create');
     }
 
     /**
@@ -79,7 +77,11 @@ class SMSController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
+    {   
+        if (! bouncer()->hasPermission('twilio.sms.create')) {
+            abort(401, 'This action is unauthorized');
+        }
+
         try {
             // Validate data
             $request->validate(
@@ -92,10 +94,9 @@ class SMSController extends Controller
             $twilioService = new TwilioService();
 
             $sms_data = $request->only("to", "body");
-            $sms_data[] = route('admin.sms.statusCallback');
             
             $msg = $twilioService->sendSms(
-                $sms_data["to"], $sms_data["body"], route('admin.sms.statusCallback')
+                $sms_data["to"], $sms_data["body"], route('admin.twilio.sms.statusCallback')
             );
             
             $sms_data["sid"] = $msg->sid;
@@ -105,7 +106,7 @@ class SMSController extends Controller
 
             session()->flash('success', __('twilio::package.sms.sms-created-success'));
 
-            return redirect()->route('admin.sms.index');
+            return redirect()->route('admin.twilio.sms.index');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             

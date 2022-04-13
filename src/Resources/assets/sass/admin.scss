@@ -1,4 +1,4 @@
-.temp-icon {
+.twilio-icon {
     width: 22px;
     height: 22px;
     display: inline-block;
@@ -6,12 +6,27 @@
     background-image: url("../images/Icon.svg");
 }
 
+li:hover a .twilio-icon {
+    background-image: url("../images/Icon-Active.svg");
+}
+
 .active {
-    .temp-icon {
+    .twilio-icon {
         background-image: url("../images/Icon-Active.svg");
     }
 
-    &.temp-icon {
+    &.twilio-icon {
         background-image: url("../images/Icon-Active.svg");
     }
+}
+
+#body {
+    font-family: inherit;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #2196F3;
+    color: white;
+    margin-bottom: 15px;    
 }

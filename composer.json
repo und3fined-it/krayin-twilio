@@ -1,6 +1,6 @@
 {
     "name": "und3fined-it/krayin-twilio",
-    "description": "This package implements Twilio into Krayin giving to the user a simple interface to send sms",
+    "description": "This package implements Twilio into Krayin",
     "keywords": [
         "sms",
         "gateway",
@@ -8,8 +8,8 @@
         "laravel"
     ],
     "require": {
-        "twilio/sdk": "^5.0"
-        
+        "twilio/sdk": "^5.0",
+        "krayin/laravel-crm": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -19,14 +19,16 @@
     "authors": [
         {
             "name": "Agostino Fiscale",
-            "email": "agostinofiscale@gmail.com"
+            "email": "agostinofiscale@gmail.com",
+            "role": "Developer"
         }
     ],
     "extra": {
         "laravel": {
             "providers": [
-                "Undefined\\Krayin\\Twilio\\Providers\\SMSServiceProvider"
+                "Undefined\\Krayin\\Twilio\\Providers\\TwilioServiceProvider"
             ]
         }
-    }
+    },
+    "type": "library"
 }

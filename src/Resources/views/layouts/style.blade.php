@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="{{ asset('vendor/sms/assets/css/admin.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/twilio/assets/css/admin.css') }}">

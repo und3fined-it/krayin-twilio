@@ -20,6 +20,11 @@ return [
                 'name' => 'api_auth_token',
                 'title' => 'twilio::package.config.api_auth_token',
                 'type' => 'password',
+            ],
+            [
+                'name' => 'api_message_sid',
+                'title' => 'twilio::package.config.api_message_sid',
+                'type' => 'password',
             ]
         ],
     ],

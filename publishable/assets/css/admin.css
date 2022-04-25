@@ -1,1 +1,1 @@
-.temp-icon{width:48px;height:48px;display:inline-block;background-size:cover;background-image:url(../images/Icon-Temp.svg)}.active.temp-icon,.active .temp-icon{background-image:url(../images/Icon-Temp-Active.svg)}
+.twilio-icon{background-image:url(../images/Icon.svg);background-size:cover;display:inline-block;height:22px;width:22px}.active .twilio-icon,.active.twilio-icon,li:hover a .twilio-icon{background-image:url(../images/Icon-Active.svg)}#body{font-family:inherit}.alert{background-color:#2196f3;color:#fff;margin-bottom:15px;padding:20px}

@@ -21,7 +21,7 @@ class TwilioServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'twilio');
 
         $this->publishes([
-            __DIR__ . '/../../publishable/assets' => public_path('twilio/assets'),
+            __DIR__ . '/../../publishable/assets' => public_path('vendor/krayin-twilio/assets'),
         ], 'public');
 
         $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'twilio');

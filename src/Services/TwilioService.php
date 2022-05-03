@@ -26,7 +26,7 @@ class TwilioService {
             "twilio.general.api_message_sid"
         );
 
-        if ($this->account_sid == null || $this->auth_token == null || $this->message_sid) {
+        if ($this->account_sid == null || $this->auth_token == null || $this->message_sid == null) {
             throw new \Exception("Missing data.");
         }
 

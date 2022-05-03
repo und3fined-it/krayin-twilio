@@ -7,7 +7,8 @@ return [
     "config" => [
         "general_settings" => "Impostazioni generali",
         "api_account_sid" => "Account SID",
-        "api_auth_token" => "Auth token"
+        "api_auth_token" => "Auth token",
+        "api_message_sid" => "Message SID"
     ],  
     "sms" => [
         'name' => "SMS",

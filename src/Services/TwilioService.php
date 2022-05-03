@@ -22,7 +22,11 @@ class TwilioService {
             "twilio.general.api_auth_token"
         );
 
-        if ($this->account_sid == null || $this->auth_token == null) {
+        $this->message_sid = $krayinCore->getConfigData(
+            "twilio.general.api_message_sid"
+        );
+
+        if ($this->account_sid == null || $this->auth_token == null || $this->message_sid == null) {
             throw new \Exception("Missing data.");
         }
 
@@ -34,7 +38,7 @@ class TwilioService {
             ->create($to,
                 [
                     "body" => $body,
-                    "messagingServiceSid" => "MG98ea9d5a025a5dc09d9812b751bd64c4",
+                    "messagingServiceSid" => $this->message_sid,
                     "statusCallback" => $statusCallback
                 ]
             );
